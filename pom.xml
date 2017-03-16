@@ -15,9 +15,9 @@
 
 	<dependencies>
 		<dependency>
-			 <groupId>me.reactiv.fabric-java-sdk</groupId>
-  <artifactId>fabric-java-sdk</artifactId>
-  <version>0.6.5</version>
+			<groupId>me.reactiv.fabric-java-sdk</groupId>
+			<artifactId>fabric-java-sdk</artifactId>
+			<version>0.6.6</version>
 		</dependency>
 
 
@@ -27,7 +27,6 @@
 		</dependency>
 
 	</dependencies>
-
 
 	<build>
 		<plugins>
