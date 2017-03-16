@@ -48,7 +48,7 @@ public class MyController {
 		logger.info("In MyController constructor ...");
 
 		 chain = new Chain("javacdd");
-		 chain.setDeployWaitTime(60);
+		 chain.setDeployWaitTime(60*5);
 		try {
 
 			chain.setMemberServicesUrl("grpc://localhost:7054", null);
@@ -67,7 +67,7 @@ public class MyController {
 			chain.setRegistrar(registrar);
 			chain.eventHubConnect("grpc://localhost:7053", null);
 
-			chainCodeID = "c26e67892e532a7c25ef4431719e66652fd9eb33f824634c875c8cdd80453199";//deploy();
+			chainCodeID = deploy();
 
 		} catch (CertificateException | IOException  e) {
 			logger.error(e.getMessage(), e);
