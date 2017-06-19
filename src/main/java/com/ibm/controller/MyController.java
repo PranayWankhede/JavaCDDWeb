@@ -82,7 +82,7 @@ public class MyController {
 		ArrayList<String> args = new ArrayList<String>();
 		args.add("init");
 		args.add("farmer");
-		args.add("10");
+		args.add("20");
 		args.add("42");
 		deployRequest.setArgs(args);
 		deployRequest.setChaincodePath(Paths.get(System.getProperty("user.home"), "git", "JavaCDD").toString());
@@ -95,8 +95,8 @@ public class MyController {
 
 	@RequestMapping(method = RequestMethod.GET, path = "/executeContract", produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody
-	String executeContract(@RequestParam String clientName, @RequestParam String postalCode,
-			@RequestParam String countryCode) throws JsonProcessingException {
+	String executeContract(@RequestParam String clientName, @RequestParam String lon,
+			@RequestParam String lat) throws JsonProcessingException {
 
 		logger.info("Calling /executeContract ...");
 
@@ -104,8 +104,8 @@ public class MyController {
 		ArrayList<String> args = new ArrayList<String>();
 		args.add("executeContract");
 		args.add(clientName);
-		args.add(postalCode);
-		args.add(countryCode);
+		args.add(lon);
+		args.add(lat);
 		invokeRequest.setArgs(args);
 		invokeRequest.setChaincodeLanguage(ChaincodeLanguage.JAVA);
 		invokeRequest.setChaincodeID(chainCodeID);
